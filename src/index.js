@@ -11,7 +11,7 @@ dotenv.config();
 
 
 const app = express();
-const corsOption = "http//localhost:3000"
+
 
 app.set('port', process.env.PORT || 4000);
 
@@ -22,7 +22,7 @@ app.listen( app.get('port'), ()=>{
 
 //middlewears:  
 
-app.use(cors(corsOption));
+app.use(cors({ origin: true }));
 app.use(express.json()); 
 app.use(express.urlencoded({extended: true}));
 app.use(morgan('dev'));
