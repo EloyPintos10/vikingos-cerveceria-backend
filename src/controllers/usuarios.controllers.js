@@ -73,12 +73,20 @@ export const crearUsuario = async (req, res) => {
     usuario.password = bcrypt.hashSync(password, salt);
 
     await usuario.save();
+   
+    const token = await generarJWT(usuario._id, usuario.nombre);
 
     res.status(201).json({
       mensaje: "usuario creado",
-      nombre: usuario.nombre,
       uid: usuario._id,
+      nombre: usuario.nombre,
+      perfil: usuario.perfil,
+      token,
     });
+   
+
+
+   
   } catch (error) {
     console.log(error);
     res.status(400).json({

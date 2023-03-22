@@ -1,7 +1,7 @@
 import * as dotenv from 'dotenv'
 import express from 'express';
 import morgan from 'morgan';
-import cors from "cors"
+import cors from 'cors'
 import path from 'path';
 import productoRouter from './routes/productos.routes'
 import pedidosRouter from "./routes/pedidos.routes"
@@ -10,11 +10,12 @@ import './database';
 dotenv.config();
 
 
+
 const app = express();
 
 
 app.set('port', process.env.PORT || 4000);
-console.log()
+console.log('port')
 app.listen( app.get('port'), ()=>{
     console.log('Estoy en el puerto ' + app.get('port'))
 })

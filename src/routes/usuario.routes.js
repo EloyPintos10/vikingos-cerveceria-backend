@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { crearUsuario, login, listarUsuarios, obtenerUsuarios, borrarUsuarios } from "../controllers/usuarios.controllers";
+import generarJWT from "../helpers/jwt";
 
 
 
@@ -33,8 +34,10 @@ router
       check("password", "El password debe de ser de 8 caracteres").isLength({
         min: 8,
       }),
+     
       
     ],
+    
     crearUsuario
   );
 
