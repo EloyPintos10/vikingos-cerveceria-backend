@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { crearUsuario, login, listarUsuarios, obtenerUsuarios, borrarUsuarios } from "../controllers/usuarios.controllers";
-import generarJWT from "../helpers/jwt";
+
 
 
 

@@ -3,7 +3,7 @@ import mongoose, { Schema } from "mongoose";
 const pedidoSchema = new Schema({
   
     usuario: {
-      type: String,
+      type: String,      
       required: true,    
       
     },

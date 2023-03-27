@@ -3,6 +3,7 @@ import { crearPedido,listarPedidos,borrarPedido,editarPedido } from "../controll
 import { check } from "express-validator";
 
 
+
 const router = Router();
 
 router
@@ -10,7 +11,8 @@ router
   .get(listarPedidos)
   .post(
     [
-      check("usuario", "El usuario es obligatorio").notEmpty(),
+      
+     check("usuario", "El usuario es obligatorio").notEmpty(),
       check("detallePedido", "El detalle del pedido es obligatorio").notEmpty(),
       check("montoTotal", "El monto es obligatorio")
         .notEmpty()
