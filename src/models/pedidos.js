@@ -5,7 +5,7 @@ const pedidoSchema = new Schema({
     usuario: {
       type: String,
       required: true,     
-      unique: true,
+      
     },
    
     montoTotal: {
