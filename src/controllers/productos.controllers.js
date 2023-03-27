@@ -7,7 +7,7 @@ export const listarProductos = async (req, res) => {
 
     res.status(200).json(productos);
   } catch (error) {
-    console.log(error);
+    console.error(error);
 
     res.status(404).json({
       mensaje: "Error al buscar los productos",
@@ -21,7 +21,7 @@ export const obtenerProducto = async (req, res) => {
 
     res.status(200).json(productoBuscado);
   } catch (error) {
-    console.log(error);
+    console.error(error);
 
     res.status(404).json({
       mensaje: "Error al buscar un producto",
@@ -38,7 +38,7 @@ export const crearProducto = async (req, res) => {
       mensaje: "El producto fue creado correctamente",
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(404).json({
       mensaje: "Error al intentar agregar un nuevo producto",
     });
@@ -53,7 +53,7 @@ export const editarProducto = async (req, res) => {
       mensaje: "El producto fue editado correctamente",
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(400).json({
       mensaje: "Error al intentar editar un producto",
     });
@@ -74,7 +74,7 @@ export const borrarProducto = async (req, res) => {
       });
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(404).json({
       mensaje: "Error al intentar borrar un producto",
     });

@@ -17,7 +17,7 @@ router
         .isNumeric()
         .withMessage("El monto debe ser numerico"),
 
-      check("estado", "La estado del pedido es obligatoria").notEmpty(),
+      check("estado", "El estado del pedido es obligatoria").notEmpty(),
     ],
     crearPedido
   );

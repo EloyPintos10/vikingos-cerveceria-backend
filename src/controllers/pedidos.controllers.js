@@ -9,7 +9,7 @@ export const crearPedido = async (req, res) => {
         mensaje: "El pedido fue tomado correctamente",
       });
     } catch (error) {
-      console.log(error); 
+      console.error(error); 
       res.status(404).json({
         mensaje: "Error al intentar agregar un nuevo pedido",
       });
@@ -21,7 +21,7 @@ export const crearPedido = async (req, res) => {
     try {
       Pedido.findByIdAndDelete(req.params.id, (err, pedido) => {
         if (err || pedido === null) {
-          console.log(err);
+          console.error(err);
           return res
             .status(404)
             .json({ mensaje: "No se pudo eliminar el pedido" });
@@ -32,7 +32,7 @@ export const crearPedido = async (req, res) => {
         });
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
       res.status(404).json({
         mensaje: "Error al intentar borrar el pedido",
       });
@@ -46,7 +46,7 @@ export const crearPedido = async (req, res) => {
   
       res.status(200).json(pedidos);
     } catch (error) {
-      console.log(error);
+      console.error(error);
   
       res.status(404).json({
         mensaje: "Error al buscar los pedidos",
@@ -62,7 +62,7 @@ export const crearPedido = async (req, res) => {
         mensaje: "El pedido fue entregado correctamente",
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
       res.status(400).json({
         mensaje: "Error al intentar entregar el pedido",
       });

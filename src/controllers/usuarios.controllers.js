@@ -40,7 +40,7 @@ export const login = async (req, res) => {
       token,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(400).json({
       mensaje: "usuario o contraseña invalido",
     });
@@ -88,7 +88,7 @@ export const crearUsuario = async (req, res) => {
 
    
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(400).json({
       mensaje: "El usuario no pudo ser creado",
     });
@@ -130,7 +130,7 @@ export const borrarUsuarios = async (req, res) => {
       });
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(404).json({
       mensaje: "Error al intentar borrar un producto",
     });
