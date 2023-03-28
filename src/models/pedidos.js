@@ -1,10 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const pedidoSchema = new Schema({
-  usuario: {
-    type: String,
-    required: true,
-  },
+  
 
   montoTotal: {
     type: Number,

@@ -12,7 +12,7 @@ router
   .post(
     [
       
-     check("usuario", "El usuario es obligatorio").notEmpty(),
+     
       check("detallePedido", "El detalle del pedido es obligatorio").notEmpty(),
       check("montoTotal", "El monto es obligatorio")
         .notEmpty()
