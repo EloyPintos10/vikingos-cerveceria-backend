@@ -63,6 +63,8 @@ export const crearPedido = async (req, res) => {
       });
     } catch (error) {
       console.error(error);
+
+      
       res.status(400).json({
         mensaje: "Error al intentar entregar el pedido",
       });

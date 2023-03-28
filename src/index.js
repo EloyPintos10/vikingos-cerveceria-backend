@@ -15,7 +15,7 @@ const app = express();
 
 
 app.set('port', process.env.PORT || 4000);
-console.log('port')
+
 app.listen( app.get('port'), ()=>{
     console.log('Estoy en el puerto ' + app.get('port'))
 })
