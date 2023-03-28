@@ -1,8 +1,11 @@
 import { Router } from "express";
-import { crearPedido,listarPedidos,borrarPedido,editarPedido } from "../controllers/pedidos.controllers";
+import {
+  crearPedido,
+  listarPedidos,
+  borrarPedido,
+  editarPedido,
+} from "../controllers/pedidos.controllers";
 import { check } from "express-validator";
-
-
 
 const router = Router();
 
@@ -11,8 +14,6 @@ router
   .get(listarPedidos)
   .post(
     [
-      
-     check("usuario", "El usuario es obligatorio").notEmpty(),
       check("detallePedido", "El detalle del pedido es obligatorio").notEmpty(),
       check("montoTotal", "El monto es obligatorio")
         .notEmpty()
@@ -25,9 +26,6 @@ router
   );
 
 router;
- router
-   .route("/pedidos/:id")
-  .put( editarPedido)
-   .delete(borrarPedido);
+router.route("/pedidos/:id").put(editarPedido).delete(borrarPedido);
 
 export default router;
