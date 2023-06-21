@@ -13,7 +13,7 @@ export const pagarPedido = async (req, res) => {
                 title: datos.title,
                 unit_price: datos.price,
                 currency_id: 'ARS',
-                quantity: 1
+                quantity: datos.quantity
             }
         ]
       });
