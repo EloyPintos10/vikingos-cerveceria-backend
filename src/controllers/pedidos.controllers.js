@@ -1,4 +1,7 @@
+
 import Pedido from "../models/pedidos";
+
+
 
 export const crearPedido = async (req, res) => {
     try {
@@ -7,7 +10,8 @@ export const crearPedido = async (req, res) => {
       await pedidoNuevo.save();
       res.status(201).json({
         mensaje: "El pedido fue tomado correctamente",
-      });
+      
+      });     
     } catch (error) {
       console.error(error); 
       res.status(404).json({
@@ -15,6 +19,7 @@ export const crearPedido = async (req, res) => {
       });
     }
   };
+
 
 
   export const borrarPedido = async (req, res) => {
